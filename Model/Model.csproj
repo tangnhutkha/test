@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +50,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EF\CHUYEN.cs" />
+    <Compile Include="EF\CT_GOIHANG.cs" />
+    <Compile Include="EF\CT_XE_LICHCHAY.cs" />
+    <Compile Include="EF\DIADIEM.cs" />
+    <Compile Include="EF\DVVANTAI.cs" />
+    <Compile Include="EF\LICHCHAY.cs" />
+    <Compile Include="EF\LOAIHANGHOA.cs" />
+    <Compile Include="EF\LOAIXE.cs" />
+    <Compile Include="EF\LOTRINH.cs" />
+    <Compile Include="EF\PHIEUGOIHANG.cs" />
+    <Compile Include="EF\SODOGHE.cs" />
+    <Compile Include="EF\TTKHACHHANG.cs" />
+    <Compile Include="EF\VE.cs" />
+    <Compile Include="EF\VeXeDbContext.cs" />
+    <Compile Include="EF\XE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAO\" />
-    <Folder Include="EF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
