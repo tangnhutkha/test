@@ -16,8 +16,7 @@ namespace Model.EF
         }
 
         [Key]
-        [StringLength(20)]
-        public string SOPGH { get; set; }
+        public int SOPGH { get; set; }
 
         [Required]
         [StringLength(10)]

@@ -22,11 +22,14 @@ namespace Model.EF
         [StringLength(50)]
         public string TENDV { get; set; }
 
-        [StringLength(50)]
-        public string TENDN { get; set; }
+        public int ID { get; set; }
 
         [StringLength(50)]
-        public string MATKHAU { get; set; }
+        public string EmailDV { get; set; }
+
+        public int? SDTDV { get; set; }
+
+        public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<XE> XEs { get; set; }

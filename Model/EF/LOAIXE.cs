@@ -16,7 +16,7 @@ namespace Model.EF
         }
 
         [Key]
-        [StringLength(2)]
+        [StringLength(3)]
         public string MALX { get; set; }
 
         [StringLength(50)]

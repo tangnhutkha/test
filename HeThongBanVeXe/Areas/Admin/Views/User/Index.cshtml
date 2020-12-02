@@ -1,0 +1,55 @@
+﻿@model PagedList.PagedList<Model.EF.User>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Quản lý người dùng";
+    Layout = "~/Areas/Admin/Views/Shared/_layouts.cshtml";
+}
+@section header{
+    Quản lý người dùng
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="container-fluid">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Danh sách người dùng</h6>
+                </div>
+                <
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tài khoản</th>
+                                    <th>Mật khẩu</th>
+                                </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                <tr id="row_@item.ID">
+                                    <td>
+                                        <a href="/Admin/User/Edit/@item.ID">Sửa</a>
+                                        |
+                                        @Ajax.ActionLink("Xoá", "Delete", new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có muốn xóa tài khoản này ?",
+                                       OnComplete = "$('#row_"+item.ID+"').remove()",
+                                       HttpMethod = "Delete"
+                                   })
+
+                                    </td>
+                                    <td>@item.UserName</td>
+                                    <td>@item.Password</td>
+                                </tr>
+                            }
+                        </table>
+                        @*Phân trang*@
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

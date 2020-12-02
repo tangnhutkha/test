@@ -23,7 +23,7 @@ namespace Model.EF
         public byte? SOCHO { get; set; }
 
         [Required]
-        [StringLength(2)]
+        [StringLength(3)]
         public string MALX { get; set; }
 
         [Required]

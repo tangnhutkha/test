@@ -16,7 +16,6 @@ namespace Model.EF
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MALC { get; set; }
 
         [StringLength(100)]

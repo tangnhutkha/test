@@ -10,8 +10,8 @@ namespace Model.EF
     {
         [Key]
         [Column(Order = 0)]
-        [StringLength(20)]
-        public string SOPGH { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int SOPGH { get; set; }
 
         [Key]
         [Column(Order = 1)]

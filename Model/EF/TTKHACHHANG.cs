@@ -22,7 +22,7 @@ namespace Model.EF
         [StringLength(50)]
         public string TENKH { get; set; }
 
-        public byte? SDT { get; set; }
+        public int? SDT { get; set; }
 
         [StringLength(50)]
         public string Email { get; set; }
